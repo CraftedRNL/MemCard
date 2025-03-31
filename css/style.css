@@ -95,3 +95,12 @@ body{
 ul{
     padding: 0px;
 }
+.count{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    font-size: 2rem;
+}
+ .container-fluid{
+    width: auto;
+ }

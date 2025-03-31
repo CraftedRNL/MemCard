@@ -3,6 +3,7 @@ const cards = document.querySelectorAll(".card");
 let matchedCard = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
+let count = 0;
 
 function flipCard(e){
     let clickedCard = e.target;
@@ -24,7 +25,10 @@ function matchCards(img1, img2){
         matchedCard++;
         if(matchedCard == 8){
             setTimeout(()=>{
+                count++;
+                document.getElementById("count").innerHTML = count;
                 return shuffleCard();
+                
             },1000)
         }
         cardOne.removeEventListener("click", flipCard);
@@ -61,7 +65,7 @@ function shuffleCard(){
 }
 
 shuffleCard();
-
+document.getElementById("count").innerHTML = count;
 cards.forEach(card =>{
     // card.classList.add("flip")
     card.addEventListener("click", flipCard)
